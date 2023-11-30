@@ -6,7 +6,7 @@ public class Ship : MonoBehaviour, IMove, IShoot
 {
     [SerializeField] private Rigidbody2D _rb;
 
-    [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private UnityElementPool _bullets;
 
     [SerializeField] float _thrustSpeed;
     [SerializeField] float _torqueSpeed;
@@ -77,7 +77,7 @@ public class Ship : MonoBehaviour, IMove, IShoot
 
     private void Shoot()
     {
-        Bullet bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
-        bullet.Project(transform.up);
+        GameObject go = _bullets.Get(transform.position); // = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+        go.GetComponent<Bullet>().Project(transform.up);
     }
 }
