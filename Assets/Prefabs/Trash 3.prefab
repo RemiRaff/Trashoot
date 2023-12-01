@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 183223863472602065, guid: 9f1da9370a4e8bb76a538a7e5e7fc178, type: 3}
+      propertyPath: m_Size.x
+      value: 0.48702064
+      objectReference: {fileID: 0}
+    - target: {fileID: 183223863472602065, guid: 9f1da9370a4e8bb76a538a7e5e7fc178, type: 3}
+      propertyPath: m_Size.y
+      value: 0.46803322
+      objectReference: {fileID: 0}
+    - target: {fileID: 183223863472602065, guid: 9f1da9370a4e8bb76a538a7e5e7fc178, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.020579949
+      objectReference: {fileID: 0}
+    - target: {fileID: 183223863472602065, guid: 9f1da9370a4e8bb76a538a7e5e7fc178, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0030684024
+      objectReference: {fileID: 0}
     - target: {fileID: 3270854706232102317, guid: 9f1da9370a4e8bb76a538a7e5e7fc178, type: 3}
       propertyPath: m_Name
       value: Trash 3

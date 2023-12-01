@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2709553426514437736}
-  _bulletPrefab: {fileID: -3199125130266009351, guid: 51a8376ac3cd755cbbad07a94f820c02, type: 3}
-  _thrustSpeed: 1.5
-  _torqueSpeed: 0.1
+  _bullets: {fileID: 0}
+  _thrustSpeed: 1
+  _rotationSpeed: 0.1
 --- !u!1 &8388730662054652143
 GameObject:
   m_ObjectHideFlags: 0

@@ -117,10 +117,11 @@ GameObject:
   - component: {fileID: 6180429737886119113}
   - component: {fileID: 8690366954344900008}
   - component: {fileID: -5039035638904435769}
-  - component: {fileID: -228510289427134671}
+  - component: {fileID: 4822168880194288977}
+  - component: {fileID: 398861293843766128}
   m_Layer: 9
   m_Name: Trash
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0009274781, y: 0.006492272}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -184,7 +185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5900635, y: 0.28956702}
   m_EdgeRadius: 0
 --- !u!50 &-5039035638904435769
 Rigidbody2D:
@@ -213,7 +214,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-228510289427134671
+--- !u!114 &4822168880194288977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,6 +223,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 6301937305276699604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb8ee083ff70bc4cb401e86b1cb300f, type: 3}
+  m_Script: {fileID: 11500000, guid: 21590c3ec2e8db24cb833b7c3150a57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreAddSerialized:
+    mode: 0
+    unityReference: {fileID: 11400000, guid: 77d7edc0dffd0b64fa0f82494d5da32e, type: 2}
+    rawReference:
+      rid: -2
+  _trash: {fileID: 398861293843766128}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &398861293843766128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301937305276699604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe412974bfa9f664fb615b5878315b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreEffectSerialized:
+    mode: 0
+    unityReference: {fileID: 4822168880194288977}
+    rawReference:
+      rid: -2
+  _size: 1
+  _minSize: 0.35
+  _maxSize: 1.65
+  _movementSpeed: 50
+  _maxLifetime: 30
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

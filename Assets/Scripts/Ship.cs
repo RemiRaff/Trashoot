@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour, IMove, IShoot
@@ -9,7 +7,7 @@ public class Ship : MonoBehaviour, IMove, IShoot
     [SerializeField] private UnityElementPool _bullets;
 
     [SerializeField] float _thrustSpeed;
-    [SerializeField] float _torqueSpeed;
+    [SerializeField] float _rotationSpeed;
 
     private bool _thrusting;
     private float _turnDirection;
@@ -24,7 +22,7 @@ public class Ship : MonoBehaviour, IMove, IShoot
         }
         if (_turnDirection != 0)
         {
-            _rb.AddTorque(_turnDirection * _torqueSpeed);
+            _rb.AddTorque(_rotationSpeed * _turnDirection);
         }
     }
 
@@ -33,19 +31,12 @@ public class Ship : MonoBehaviour, IMove, IShoot
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ManageInputs();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -77,7 +68,17 @@ public class Ship : MonoBehaviour, IMove, IShoot
 
     private void Shoot()
     {
-        GameObject go = _bullets.Get(transform.position); // = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+        GameObject go = _bullets.Get(transform.position);
         go.GetComponent<Bullet>().Project(transform.up);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trash"))
+        {
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = 0f;
+            gameObject.SetActive(false);
+        }
     }
 }
